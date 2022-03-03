@@ -1,10 +1,12 @@
-# [Título del trabajo]
+# [High security door system in prisons]
 
-[Descripción breve del proyecto a realizar (2-3 frases).]
+[Evitar que los presos se escapen de la cárcel con un sistema recopilador de huellas y sensor de movimiento]
 
 ## Integrantes del equipo
 
-[Nombres, apellidos, y usuario GitHub de los integrantes del equipo.]
+[Sara Khiar Souri(SaraKhS)
+ Carlota Pinedo González-Ortega (Carlota03)
+ Inés López-Boado Rodríguez(ineslopez03)]
 
 ## Objetivos del trabajo
 
