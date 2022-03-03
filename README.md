@@ -4,9 +4,9 @@
 
 ## Integrantes del equipo
 
-[Sara Khiar Souri(SaraKhS)
- Carlota Pinedo González-Ortega (Carlota03)
- Inés López-Boado Rodríguez(ineslopez03)]
+[1.Sara Khiar Souri(SaraKhS)
+ 2.Carlota Pinedo González-Ortega (Carlota03)
+ 3.Inés López-Boado Rodríguez(ineslopez03)]
 
 ## Objetivos del trabajo
 
