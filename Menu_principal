@@ -1,0 +1,128 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<locale.h>
+
+int menu_ppal(void);
+
+int main(void)
+{
+	setlocale(LC_ALL, "es-ES");
+
+	int opc;
+	int compania;
+	int quien;
+
+	opc = menu_ppal();
+
+	switch (opc)
+	{
+	case 1: 
+		printf("1) no solo\n");
+		printf("2) solo \n");
+
+		scanf_s("%d", &compania);
+
+		switch (compania)
+		{
+		case 1:
+			printf("Vas acompañado!\n");
+			printf("1) acompañado de un preso\n");
+			printf("2) acompañado de un oficial\n");
+
+			scanf_s("%d", &quien);
+
+			switch (quien)
+			{
+			case 1:
+				printf("Vale, ahora le aparecerá la opción para introducir la huella del preso en el sistema: \n");
+				break;
+			case 2:
+				printf("Esta huella ya debería estar registrada, sino lo está elija la opción tres para introducir la huella de un oficial. \n");
+				break;
+			default:
+				printf("ERROR");
+			}
+			break;
+		case 2:
+			printf("Vas solo!\n");
+			printf("Esta huella ya debería estar registrada, sino lo está elija la opción tres para introducir la huella de un oficial. \n");
+			break;
+		default:
+			printf("ERROR");
+		}
+			
+		break;
+	case 2:
+		printf("1) no solo\n");
+		printf("2) solo \n");
+
+		scanf_s("%d", &compania);
+
+		switch (compania)
+		{
+		case 1:
+			printf("Vas acompañado!\n");
+			printf("1) acompañado de un preso\n");
+			printf("2) acompañado de un oficial\n");
+
+			scanf_s("%d", &quien);
+
+			switch (quien)
+			{
+			case 1:
+				printf("Esta huella ya debería estar registrada \n");
+				break;
+			case 2:
+				printf("Esta huella ya debería estar registrada \n");
+				break;
+			default:
+				printf("ERROR");
+			}
+			break;
+		case 2:
+			printf("Vas solo!\n");
+			printf("Esta huella ya debería estar registrada, sino lo está elija la opción tres para introducir la huella de un oficial. \n");
+			break;
+		default:
+			printf("ERROR");
+		}
+		break;
+	case 3:
+		printf("Has elegido introducir una nueva huella al sistema, para continar introduce la contraseña: \n");
+		break;
+	}
+
+	
+
+
+}
+
+int menu_ppal(void)
+{
+
+	int opcion, i;
+
+	printf(" MENÚ PRINCIPAL:\n");
+	printf(" *******************************\n");
+	printf(" Seleccione opción : \n");
+	printf(" 1.Entrar \n");
+	printf(" 2.Salir\n");
+	printf(" 3.Introducir nueva huella\n");
+	printf(" ********************************\n");
+
+	i = 0;
+
+	do
+	{
+		if (i >= 1)
+			printf("Recuerda intruducir un número entre el 1-3 !!\n");
+
+		scanf_s("%d", &opcion);
+
+		i++;
+
+	} while (opcion != 1 && opcion != 2 && opcion != 3);
+
+	return opcion; 
+
+}
