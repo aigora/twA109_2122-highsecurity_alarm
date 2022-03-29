@@ -1,0 +1,48 @@
+//Borrador para el funcionamiento de los sensores(aún no sabemos como funcionan del todo realmente)
+
+#include <Adafruit_Fingerprint.h>
+
+int PIR = 8; //PIN usado para Sensor de movimiento
+int valor; //Variable para el valor del Sensor.
+uint8_t id;
+#if (defined(AVR) || defined(ESP8266)) && !defined(AVR_ATmega2560)
+
+SoftwareSerial mySerial(2, 3);
+#else
+#define mySerial Serial1
+#endif
+Adafruit_Fingerprint finger = Adafruit_Fingerprint(&mySerial);
+
+void setup() {
+pinMode(PIR,INPUT); //Declaramos al sensor de tipo entrada
+
+//Para el detector de huellas
+Serial.begin(9600);
+while (!Serial);
+delay(100);
+Serial.println("\n\nAdafruit Fingerprint sensor enrollment");
+
+finger.begin(57600);
+if (finger.verifyPassword()) {
+Serial.println("Guardia, salida permitida");
+} else {
+Serial.println("No registrado,salida no permitida");
+while (1) { delay(1); }
+}
+}
+
+void loop() {
+valor = digitalRead(PIR); //Obtenemos el valor del sensor
+if(valor == HIGH){ // Comparamos el valor si es HIGH esta detectando un movimiento de lo contrario enviaria un LOW
+// SI el valor es igual a HIGH, pedimos la huella
+Serial.println("Huella solicitada para permitir el acceso");
+
+ //Si ya esta registrado solo comprobamos,  sino registramos
+ Serial.println("Numero asociado a la huella...");
+ id = readnumber();
+if (id == 0) {// ID #0 not allowed, try again!
+return;
+}
+Serial.print("Enrolling ID #");
+Serial.println(id);
+while (! getFingerprintEnroll() );
